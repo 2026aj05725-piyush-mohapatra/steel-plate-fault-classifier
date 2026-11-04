@@ -1,0 +1,159 @@
+{
+  "dataset": "UCI Steel Plates Faults (Buscema, Terzi & Tastle, 2010) \u2014 DOI 10.24432/C5J88N",
+  "trained_at": "2026-11-04T05:21:03",
+  "split": {
+    "test_fraction": 0.2,
+    "random_state": 1729,
+    "stratified": true,
+    "train_rows": 1552,
+    "test_rows": 389
+  },
+  "cv": "StratifiedKFold(n_splits=5, shuffle=True), scoring=f1_macro",
+  "features": [
+    "X_Minimum",
+    "X_Maximum",
+    "Y_Minimum",
+    "Y_Maximum",
+    "Pixels_Areas",
+    "X_Perimeter",
+    "Y_Perimeter",
+    "Sum_of_Luminosity",
+    "Minimum_of_Luminosity",
+    "Maximum_of_Luminosity",
+    "Length_of_Conveyer",
+    "TypeOfSteel_A300",
+    "TypeOfSteel_A400",
+    "Steel_Plate_Thickness",
+    "Edges_Index",
+    "Empty_Index",
+    "Square_Index",
+    "Outside_X_Index",
+    "Edges_X_Index",
+    "Edges_Y_Index",
+    "Outside_Global_Index",
+    "LogOfAreas",
+    "Log_X_Index",
+    "Log_Y_Index",
+    "Orientation_Index",
+    "Luminosity_Index",
+    "SigmoidOfAreas"
+  ],
+  "target": "Fault_Type",
+  "classes": [
+    "Bumps",
+    "Dirtiness",
+    "K_Scatch",
+    "Other_Faults",
+    "Pastry",
+    "Stains",
+    "Z_Scratch"
+  ],
+  "metric_averaging": "macro",
+  "models": {
+    "Logistic Regression": {
+      "file": "logistic_regression.joblib",
+      "best_params": {
+        "C": 0.3,
+        "class_weight": null,
+        "scale": "StandardScaler"
+      },
+      "cv_macro_f1": 0.7133,
+      "candidates_tried": 28,
+      "search_seconds": 18.6,
+      "test_metrics": {
+        "Accuracy": 0.7481,
+        "AUC": 0.9406,
+        "Precision": 0.7659,
+        "Recall": 0.7555,
+        "F1": 0.7529,
+        "MCC": 0.6771
+      }
+    },
+    "Decision Tree": {
+      "file": "decision_tree.joblib",
+      "best_params": {
+        "class_weight": null,
+        "criterion": "entropy",
+        "max_depth": 10,
+        "min_samples_leaf": 1
+      },
+      "cv_macro_f1": 0.7502,
+      "candidates_tried": 96,
+      "search_seconds": 8.2,
+      "test_metrics": {
+        "Accuracy": 0.7224,
+        "AUC": 0.8894,
+        "Precision": 0.7253,
+        "Recall": 0.7778,
+        "F1": 0.7468,
+        "MCC": 0.6481
+      }
+    },
+    "K-Nearest Neighbors": {
+      "file": "knn.joblib",
+      "best_params": {
+        "n_neighbors": 5,
+        "p": 1,
+        "weights": "distance",
+        "scale": "StandardScaler"
+      },
+      "cv_macro_f1": 0.7536,
+      "candidates_tried": 56,
+      "search_seconds": 31.4,
+      "test_metrics": {
+        "Accuracy": 0.7584,
+        "AUC": 0.9424,
+        "Precision": 0.7641,
+        "Recall": 0.8205,
+        "F1": 0.7874,
+        "MCC": 0.6967
+      }
+    },
+    "Naive Bayes (Gaussian)": {
+      "file": "naive_bayes_gaussian.joblib",
+      "best_params": {
+        "var_smoothing": 1e-06,
+        "scale": "StandardScaler"
+      },
+      "cv_macro_f1": 0.633,
+      "candidates_tried": 22,
+      "search_seconds": 12.3,
+      "test_metrics": {
+        "Accuracy": 0.6144,
+        "AUC": 0.9101,
+        "Precision": 0.6202,
+        "Recall": 0.7425,
+        "F1": 0.6459,
+        "MCC": 0.5479
+      }
+    },
+    "Support Vector Machine": {
+      "file": "svm_rbf.joblib",
+      "best_params": {
+        "C": 10,
+        "class_weight": "balanced",
+        "gamma": 0.1,
+        "scale": "StandardScaler"
+      },
+      "cv_macro_f1": 0.7724,
+      "candidates_tried": 80,
+      "search_seconds": 103.9,
+      "test_metrics": {
+        "Accuracy": 0.7686,
+        "AUC": 0.9589,
+        "Precision": 0.7776,
+        "Recall": 0.817,
+        "F1": 0.792,
+        "MCC": 0.7117
+      }
+    }
+  },
+  "best_model_by_test_f1": "Support Vector Machine",
+  "library_versions": {
+    "python": "3.13.18",
+    "scikit-learn": "1.7.2",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "joblib": "1.5.2"
+  }
+}
