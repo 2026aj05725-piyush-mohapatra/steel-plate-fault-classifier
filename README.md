@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | **GitHub repository** | https://github.com/2026aj05725-piyush-mohapatra/steel-plate-fault-classifier |
-| **Live Streamlit app** | https://steel-plate-fault-classifier.streamlit.app |
+| **Live Streamlit app** | https://steel-fault-classifier-2026aj05725.streamlit.app |
 
 ---
 
@@ -136,7 +136,7 @@ All five models are scikit-learn `Pipeline`s, so the scaler is stored inside eac
 
 ## Streamlit App
 
-**Live app:** https://steel-plate-fault-classifier.streamlit.app
+**Live app:** https://steel-fault-classifier-2026aj05725.streamlit.app
 
 | Required feature | How the app does it |
 |---|---|
